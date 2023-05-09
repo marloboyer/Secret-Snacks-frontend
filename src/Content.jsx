@@ -9,10 +9,19 @@ import { ReviewsIndex } from "./ReviewsIndex";
 import { SnacksNew } from "./SnacksNew";
 import { LocationsNew } from "./LocationsNew";
 import { ReviewsNew } from "./ReviewsNew";
-// import { Modal } from "./Modal";
+import { Modal } from "./Modal";
+import { SnacksShow } from "./SnacksShow";
+import { LocationsShow } from "./LocationsShow";
+import { ReviewsShow } from "./ReviewsShow";
 
 export function Content() {
   const [snacks, setSnacks] = useState([]);
+  const [isSnacksShowVisible, setIsSnacksShowVisible] = useState(false);
+  const [currentSnack, setCurrentSnack] = useState({});
+  const [isReviewsShowVisible, setIsReviewsShowVisible] = useState(false);
+  const [currentReview, setCurrentReview] = useState({});
+  const [isLocationsShowVisible, setIsLocationsShowVisible] = useState(false);
+  const [currentLocation, setCurrentLocation] = useState({});
   const handleIndexSnacks = () => {
     console.log("handleIndexSnacks");
     axios.get("http://localhost:3000/snacks.json").then((response) => {
@@ -68,6 +77,31 @@ export function Content() {
     });
   };
 
+  const handleShowSnack = (snack) => {
+    console.log("handleShowSnack", snack);
+    setIsSnacksShowVisible(true);
+    setCurrentSnack(snack);
+  };
+
+  const handleClose = () => {
+    console.log("handleClose");
+    setIsSnacksShowVisible(false);
+    setIsReviewsShowVisible(false);
+    setIsLocationsShowVisible(false);
+  };
+
+  const handleShowReview = (review) => {
+    console.log("handleShowReview", review);
+    setIsReviewsShowVisible(true);
+    setCurrentReview(review);
+  };
+
+  const handleShowLocation = (location) => {
+    console.log("handleShowLocation", location);
+    setIsLocationsShowVisible(true);
+    setCurrentLocation(location);
+  };
+
   return (
     <div>
       <h1>Secret Snacks!</h1>
@@ -77,9 +111,18 @@ export function Content() {
       <SnacksNew onCreateSnack={handleCreateSnack} />
       <LocationsNew onCreateLocation={handleCreateLocation} />
       <ReviewsNew onCreateReview={handleCreateReview} />
-      <SnacksIndex snacks={snacks} />
-      <LocationsIndex locations={locations} />
-      <ReviewsIndex reviews={reviews} />
+      <SnacksIndex snacks={snacks} onShowSnack={handleShowSnack} />
+      <LocationsIndex locations={locations} onShowLocation={handleShowLocation} />
+      <ReviewsIndex reviews={reviews} onShowReview={handleShowReview} />
+      <Modal show={isSnacksShowVisible} onClose={handleClose}>
+        <SnacksShow snack={currentSnack} />
+      </Modal>
+      <Modal show={isReviewsShowVisible} onClose={handleClose}>
+        <ReviewsShow review={currentReview} />
+      </Modal>
+      <Modal show={isLocationsShowVisible} onClose={handleClose}>
+        <LocationsShow review={currentLocation} />
+      </Modal>
     </div>
   );
 }

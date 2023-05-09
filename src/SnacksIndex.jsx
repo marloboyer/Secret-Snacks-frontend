@@ -8,6 +8,7 @@ export function SnacksIndex(props) {
           <p>{snack.brand}</p>
           <p>{snack.user_id}</p>
           <img src={snack.snack_image} />
+          <button onClick={() => props.onShowSnack(snack)}>More info</button>
         </div>
       ))}
     </div>
