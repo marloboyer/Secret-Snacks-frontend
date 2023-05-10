@@ -4,6 +4,9 @@ export function SnacksShow(props) {
     const params = new FormData(event.target);
     props.onUpdateSnack(props.snack.id, params, () => event.target.reset());
   };
+  const handleClick = () => {
+    props.onDestroySnack(props.snack);
+  };
   return (
     <div>
       <h1>Snack information</h1>
@@ -27,6 +30,7 @@ export function SnacksShow(props) {
         </div>
         <button type="submit">Update snack</button>
       </form>
+      <button onClick={handleClick}>Destroy snack</button>
     </div>
   );
 }

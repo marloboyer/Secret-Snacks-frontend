@@ -153,6 +153,30 @@ export function Content() {
     });
   };
 
+  const handleDestroySnack = (snack) => {
+    console.log("handleDestroySnack", snack);
+    axios.delete(`http://localhost:3000/snacks/${snack.id}.json`).then(() => {
+      setSnacks(snacks.filter((p) => p.id !== snack.id));
+      handleClose();
+    });
+  };
+
+  const handleDestroyReview = (review) => {
+    console.log("handleDestroyReview", review);
+    axios.delete(`http://localhost:3000/reviews/${review.id}.json`).then(() => {
+      setReviews(reviews.filter((p) => p.id !== review.id));
+      handleClose();
+    });
+  };
+
+  const handleDestroyLocation = (location) => {
+    console.log("handleDestroyLocation", location);
+    axios.delete(`http://localhost:3000/locations/${location.id}.json`).then(() => {
+      setLocations(locations.filter((p) => p.id !== location.id));
+      handleClose();
+    });
+  };
+
   return (
     <div>
       <h1>Secret Snacks!</h1>
@@ -166,13 +190,17 @@ export function Content() {
       <LocationsIndex locations={locations} onShowLocation={handleShowLocation} />
       <ReviewsIndex reviews={reviews} onShowReview={handleShowReview} />
       <Modal show={isSnacksShowVisible} onClose={handleClose}>
-        <SnacksShow snack={currentSnack} onUpdateSnack={handleUpdateSnack} />
+        <SnacksShow snack={currentSnack} onUpdateSnack={handleUpdateSnack} onDestroySnack={handleDestroySnack} />
       </Modal>
       <Modal show={isReviewsShowVisible} onClose={handleClose}>
-        <ReviewsShow review={currentReview} onUpdateReview={handleUpdateReview} />
+        <ReviewsShow review={currentReview} onUpdateReview={handleUpdateReview} onDestroyReview={handleDestroyReview} />
       </Modal>
       <Modal show={isLocationsShowVisible} onClose={handleClose}>
-        <LocationsShow location={currentLocation} onUpdateLocation={handleUpdateLocation} />
+        <LocationsShow
+          location={currentLocation}
+          onUpdateLocation={handleUpdateLocation}
+          onDestroyLocation={handleDestroyLocation}
+        />
       </Modal>
     </div>
   );

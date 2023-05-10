@@ -4,6 +4,9 @@ export function ReviewsShow(props) {
     const params = new FormData(event.target);
     props.onUpdateReview(props.review.id, params, () => event.target.reset());
   };
+  const handleClick = () => {
+    props.onDestroyReview(props.review);
+  };
   return (
     <div>
       <h1>Review information</h1>
@@ -26,6 +29,7 @@ export function ReviewsShow(props) {
         </div>
         <button type="submit">Update review</button>
       </form>
+      <button onClick={handleClick}>Destroy review</button>
     </div>
   );
 }

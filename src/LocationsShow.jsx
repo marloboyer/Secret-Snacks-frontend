@@ -4,6 +4,9 @@ export function LocationsShow(props) {
     const params = new FormData(event.target);
     props.onUpdateLocation(props.location.id, params, () => event.target.reset());
   };
+  const handleClick = () => {
+    props.onDestroyLocation(props.location);
+  };
   return (
     <div>
       <h1>Location information</h1>
@@ -22,6 +25,7 @@ export function LocationsShow(props) {
         </div>
         <button type="submit">Update location</button>
       </form>
+      <button onClick={handleClick}>Destroy location</button>
     </div>
   );
 }
