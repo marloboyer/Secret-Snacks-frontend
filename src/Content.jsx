@@ -102,6 +102,57 @@ export function Content() {
     setCurrentLocation(location);
   };
 
+  const handleUpdateSnack = (id, params, successCallback) => {
+    console.log("handleUpdateSnack", params);
+    axios.patch(`http://localhost:3000/snacks/${id}.json`, params).then((response) => {
+      setSnacks(
+        snacks.map((snack) => {
+          if (snack.id === response.data.id) {
+            return response.data;
+          } else {
+            return snack;
+          }
+        })
+      );
+      successCallback();
+      handleClose();
+    });
+  };
+
+  const handleUpdateReview = (id, params, successCallback) => {
+    console.log("handleUpdateReview", params);
+    axios.patch(`http://localhost:3000/reviews/${id}.json`, params).then((response) => {
+      setReviews(
+        reviews.map((review) => {
+          if (review.id === response.data.id) {
+            return response.data;
+          } else {
+            return review;
+          }
+        })
+      );
+      successCallback();
+      handleClose();
+    });
+  };
+
+  const handleUpdateLocation = (id, params, successCallback) => {
+    console.log("handleUpdateLocation", params);
+    axios.patch(`http://localhost:3000/locations/${id}.json`, params).then((response) => {
+      setLocations(
+        locations.map((location) => {
+          if (location.id === response.data.id) {
+            return response.data;
+          } else {
+            return location;
+          }
+        })
+      );
+      successCallback();
+      handleClose();
+    });
+  };
+
   return (
     <div>
       <h1>Secret Snacks!</h1>
@@ -115,13 +166,13 @@ export function Content() {
       <LocationsIndex locations={locations} onShowLocation={handleShowLocation} />
       <ReviewsIndex reviews={reviews} onShowReview={handleShowReview} />
       <Modal show={isSnacksShowVisible} onClose={handleClose}>
-        <SnacksShow snack={currentSnack} />
+        <SnacksShow snack={currentSnack} onUpdateSnack={handleUpdateSnack} />
       </Modal>
       <Modal show={isReviewsShowVisible} onClose={handleClose}>
-        <ReviewsShow review={currentReview} />
+        <ReviewsShow review={currentReview} onUpdateReview={handleUpdateReview} />
       </Modal>
       <Modal show={isLocationsShowVisible} onClose={handleClose}>
-        <LocationsShow review={currentLocation} />
+        <LocationsShow location={currentLocation} onUpdateLocation={handleUpdateLocation} />
       </Modal>
     </div>
   );
