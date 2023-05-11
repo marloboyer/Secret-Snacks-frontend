@@ -2,7 +2,6 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { Signup } from "./Signup";
 import { Login } from "./Login";
-import { LogoutLink } from "./LogoutLink";
 import { SnacksIndex } from "./SnacksIndex";
 import { LocationsIndex } from "./LocationsIndex";
 import { ReviewsIndex } from "./ReviewsIndex";
@@ -13,6 +12,7 @@ import { Modal } from "./Modal";
 import { SnacksShow } from "./SnacksShow";
 import { LocationsShow } from "./LocationsShow";
 import { ReviewsShow } from "./ReviewsShow";
+import { Routes, Route } from "react-router-dom";
 
 export function Content() {
   const [snacks, setSnacks] = useState([]);
@@ -180,15 +180,19 @@ export function Content() {
   return (
     <div>
       <h1>Secret Snacks!</h1>
-      <Signup />
-      <Login />
-      <LogoutLink />
+      <Routes>
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/snacks" element={<SnacksIndex snacks={snacks} onShowSnack={handleShowSnack} />} />
+        <Route path="/reviews" element={<ReviewsIndex reviews={reviews} onShowReview={handleShowReview} />} />
+        <Route
+          path="/locations"
+          element={<LocationsIndex locations={locations} onShowLocation={handleShowLocation} />}
+        />
+      </Routes>
       <SnacksNew onCreateSnack={handleCreateSnack} />
       <LocationsNew onCreateLocation={handleCreateLocation} />
       <ReviewsNew onCreateReview={handleCreateReview} />
-      <SnacksIndex snacks={snacks} onShowSnack={handleShowSnack} />
-      <LocationsIndex locations={locations} onShowLocation={handleShowLocation} />
-      <ReviewsIndex reviews={reviews} onShowReview={handleShowReview} />
       <Modal show={isSnacksShowVisible} onClose={handleClose}>
         <SnacksShow snack={currentSnack} onUpdateSnack={handleUpdateSnack} onDestroySnack={handleDestroySnack} />
       </Modal>

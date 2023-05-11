@@ -2,13 +2,26 @@ export function LocationsIndex(props) {
   return (
     <div>
       <h1>All locations</h1>
-      {props.locations.map((location) => (
-        <div key={location.id}>
-          <h2>{location.name}</h2>
-          <p>{location.snack_id}</p>
-          <p>{location.adress}</p>
-        </div>
-      ))}
+      <div className="row">
+        {props.locations ? (
+          props.locations.map((location) => (
+            <div key={location.id} className="col-sm-12 col-md-6 col-lg-4">
+              <div className="card" style={{ width: "18rem" }}>
+                <img className="card-img-top" alt="..." />
+                <div className="card-body">
+                  <h5 className="card-title">{location.name}</h5>
+                  <p className="card-text">
+                    {location.snack_id}, {location.address}
+                  </p>
+                  <button onClick={() => props.onShowLocation(location)}>More info</button>
+                </div>
+              </div>
+            </div>
+          ))
+        ) : (
+          <></>
+        )}
+      </div>
     </div>
   );
 }
