@@ -7,8 +7,9 @@ img {
 } 
 
 #root{
-  background-image: url("https://img.freepik.com/free-photo/abstract-luxury-blur-dark-grey-black-gradient-used-as-background-studio-wall-display-your-products-plain-studio-background_1258-54444.jpg?size=626&ext=jpg");
+  background-image: url("https://img.freepik.com/premium-vector/potato-chips-seamless-pattern_202271-1106.jpg");
   background-repeat: no-repeat;
-  background-size: 30000px 10000px;
-  min-height: 100vh;
+  background-size: cover;
 }
+
+https://cdn2.vectorstock.com/i/1000x1000/22/11/snacks-and-drinks-seamless-pattern-fast-food-vector-22762211.jpg

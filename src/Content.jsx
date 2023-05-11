@@ -183,14 +183,19 @@ export function Content() {
       <Routes>
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
+
         <Route path="/snacks" element={<SnacksIndex snacks={snacks} onShowSnack={handleShowSnack} />} />
+
         <Route path="/reviews" element={<ReviewsIndex reviews={reviews} onShowReview={handleShowReview} />} />
+
         <Route
           path="/locations"
           element={<LocationsIndex locations={locations} onShowLocation={handleShowLocation} />}
         />
+
+        <Route path="/snacks" element={<SnacksNew snacks={snacks} onCreateSnack={handleCreateSnack} />} />
       </Routes>
-      <SnacksNew onCreateSnack={handleCreateSnack} />
+      {/* <SnacksNew onCreateSnack={handleCreateSnack} /> */}
       <LocationsNew onCreateLocation={handleCreateLocation} />
       <ReviewsNew onCreateReview={handleCreateReview} />
       <Modal show={isSnacksShowVisible} onClose={handleClose}>

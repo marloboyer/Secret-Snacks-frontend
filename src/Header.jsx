@@ -53,6 +53,16 @@ export function Header() {
                 </Link>
               </li>
               <li className="nav-item">
+                <Link className="nav-link" to="/snacks.new">
+                  Add a new snack
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/snacks.new">
+                  Add a new review
+                </Link>
+              </li>
+              <li className="nav-item">
                 <LogoutLink />
               </li>
             </ul>
