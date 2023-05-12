@@ -20,7 +20,9 @@ export function ReviewsNew(props) {
         <div>
           Snack Rate: <input name="snack_rate" type="text" />
         </div>
-        <button type="submit">Create Review</button>
+        <button type="submit" className="btn btn-dark">
+          Create Review
+        </button>
       </form>
     </div>
   );

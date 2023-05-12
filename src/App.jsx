@@ -9,7 +9,7 @@ function App() {
       <BrowserRouter>
         <Header />
         <Content />
-        <Footer />
+        {localStorage.jwt ? <Footer /> : <></>}
       </BrowserRouter>
     </div>
   );

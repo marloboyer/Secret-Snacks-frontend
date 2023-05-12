@@ -13,6 +13,7 @@ import { SnacksShow } from "./SnacksShow";
 import { LocationsShow } from "./LocationsShow";
 import { ReviewsShow } from "./ReviewsShow";
 import { Routes, Route } from "react-router-dom";
+import { Home } from "./Home";
 
 export function Content() {
   const [snacks, setSnacks] = useState([]);
@@ -179,8 +180,8 @@ export function Content() {
 
   return (
     <div>
-      <h1>Secret Snacks!</h1>
       <Routes>
+        <Route path="/" element={<Home />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
 
@@ -193,11 +194,15 @@ export function Content() {
           element={<LocationsIndex locations={locations} onShowLocation={handleShowLocation} />}
         />
 
-        <Route path="/snacks" element={<SnacksNew snacks={snacks} onCreateSnack={handleCreateSnack} />} />
+        <Route path="/snacks/new" element={<SnacksNew snacks={snacks} onCreateSnack={handleCreateSnack} />} />
+
+        <Route path="/reviews/new" element={<ReviewsNew reviews={reviews} onCreateReview={handleCreateReview} />} />
+
+        <Route
+          path="/locations/new"
+          element={<LocationsNew locations={locations} onCreateLocation={handleCreateLocation} />}
+        />
       </Routes>
-      {/* <SnacksNew onCreateSnack={handleCreateSnack} /> */}
-      <LocationsNew onCreateLocation={handleCreateLocation} />
-      <ReviewsNew onCreateReview={handleCreateReview} />
       <Modal show={isSnacksShowVisible} onClose={handleClose}>
         <SnacksShow snack={currentSnack} onUpdateSnack={handleUpdateSnack} onDestroySnack={handleDestroySnack} />
       </Modal>
@@ -214,3 +219,5 @@ export function Content() {
     </div>
   );
 }
+
+// onUpdateSnack={handleUpdateSnack} onDestroySnack={handleDestroySnack}

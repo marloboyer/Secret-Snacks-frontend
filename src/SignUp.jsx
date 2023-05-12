@@ -13,7 +13,7 @@ export function Signup() {
       .then((response) => {
         console.log(response.data);
         event.target.reset();
-        window.location.href = "/"; // Change this to hide a modal, redirect to a specific page, etc.
+        window.location.href = "/login"; // Change this to hide a modal, redirect to a specific page, etc.
       })
       .catch((error) => {
         console.log(error.response.data.errors);
@@ -23,7 +23,7 @@ export function Signup() {
 
   return (
     <div id="signup">
-      <h1>Signup</h1>
+      <h1>Sign Up</h1>
       <ul>
         {errors.map((error) => (
           <li key={error}>{error}</li>
@@ -42,8 +42,8 @@ export function Signup() {
         <div>
           Password confirmation: <input name="password_confirmation" type="password" />
         </div>
-        <button type="submit" className="btn btn-primary">
-          Signup
+        <button type="submit" className="btn btn-dark">
+          Sign Up
         </button>
       </form>
     </div>

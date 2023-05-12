@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Titan+One&display=swap');
+home.h1{
+  font-family: 'Titan One', cursive;
+  text-shadow: 2px 4px 4px rgb(180, 180, 180);
+  /* <div class="wrapper">
+    <h1>Adding a shadow to text</h1>
+</div>  */
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -6,10 +15,26 @@ img {
   max-height: 300px;
 } 
 
-#root{
-  background-image: url("https://img.freepik.com/premium-vector/potato-chips-seamless-pattern_202271-1106.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
+/* review form style  */
+form .form-button, .form-button{
+  margin-top: .25em;
 }
 
-https://cdn2.vectorstock.com/i/1000x1000/22/11/snacks-and-drinks-seamless-pattern-fast-food-vector-22762211.jpg
+
+
+#root{
+  background: url("https://img.freepik.com/premium-vector/potato-chips-seamless-pattern_202271-1106.jpg") ;
+  /* background-repeat: no-repeat; */
+  /* background-size: cover; */
+  min-height:100vh ;
+  height: 100% ;
+  font-family: 'Titan One', cursive;
+}
+
+.home{background: url("https://cdn2.vectorstock.com/i/1000x1000/22/11/snacks-and-drinks-seamless-pattern-fast-food-vector-22762211.jpg") ;
+  /* background-repeat: no-repeat; */
+  /* background-size: cover; */
+  min-height:100vh ;
+  height: 100% ;
+}
+

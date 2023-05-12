@@ -1,3 +1,4 @@
+import "./index.css";
 export function LocationsShow(props) {
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -13,19 +14,24 @@ export function LocationsShow(props) {
       <p>Name: {props.location.name}</p>
       <p>Snack ID: {props.location.snack_id}</p>
       <p>Address: {props.location.address}</p>
+      <h2>Update Location:</h2>
       <form onSubmit={handleSubmit}>
         <div>
-          Name: <input defaultValue={props.location.name} name="name" type="text" />
+          <input defaultValue={props.location.name} name="name" type="text" />
         </div>
         <div>
-          Snack ID: <input defaultValue={props.location.snack_id} name="snack_id" type="text" />
+          <input defaultValue={props.location.snack_id} name="snack_id" type="text" />
         </div>
         <div>
-          Address: <input defaultValue={props.location.address} name="address" type="text" />
+          <input defaultValue={props.location.address} name="address" type="text" />
         </div>
-        <button type="submit">Update location</button>
+        <button type="submit" className="btn btn-dark">
+          Update location
+        </button>
       </form>
-      <button onClick={handleClick}>Destroy location</button>
+      <button className="btn btn-dark" onClick={handleClick}>
+        Destroy location
+      </button>
     </div>
   );
 }

@@ -20,7 +20,9 @@ export function SnacksNew(props) {
         <div>
           Image: <input name="imgae" type="text" />
         </div>
-        <button type="submit">Create Snack</button>
+        <button type="submit" className="btn btn-dark">
+          Create Snack
+        </button>
       </form>
     </div>
   );

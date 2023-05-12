@@ -14,23 +14,28 @@ export function SnacksShow(props) {
       <p>Brand: {props.snack.brand}</p>
       <p>User ID: {props.snack.user_id}</p>
       <p>Image: {props.snack.image}</p>
+      <h2>Update Snack</h2>
 
       <form onSubmit={handleSubmit}>
         <div>
-          Name: <input defaultValue={props.snack.name} name="name" type="text" />
+          <input defaultValue={props.snack.name} name="name" type="text" />
         </div>
         <div>
-          Brand: <input defaultValue={props.snack.brand} name="brand" type="text" />
+          <input defaultValue={props.snack.brand} name="brand" type="text" />
         </div>
         <div>
-          User ID: <input defaultValue={props.snack.user_id} name="user_id" type="text" />
+          <input defaultValue={props.snack.user_id} name="user_id" type="text" />
         </div>
         <div>
-          Image: <input defaultValue={props.snack.image} name="image" type="text" />
+          <input defaultValue={props.snack.image} name="image" type="text" />
         </div>
-        <button type="submit">Update snack</button>
+        <button type="submit" className="btn btn-dark">
+          Update snack
+        </button>
       </form>
-      <button onClick={handleClick}>Destroy snack</button>
+      <button className="btn btn-dark" onClick={handleClick}>
+        Destroy snack
+      </button>
     </div>
   );
 }

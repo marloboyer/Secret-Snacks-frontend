@@ -22,49 +22,62 @@ export function Header() {
           </button>
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
-              <li className="nav-item">
-                <Link className="nav-link active" aria-current="page" to="/">
-                  Home
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/signup">
-                  Sign Up
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/login">
-                  Login
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/snacks">
-                  Snacks
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/reviews">
-                  Reviews
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/locations">
-                  Locations
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/snacks.new">
-                  Add a new snack
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/snacks.new">
-                  Add a new review
-                </Link>
-              </li>
-              <li className="nav-item">
-                <LogoutLink />
-              </li>
+              {localStorage.jwt ? (
+                <>
+                  {" "}
+                  <li className="nav-item">
+                    <Link className="nav-link" to="/snacks">
+                      Snacks
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link className="nav-link" to="/reviews">
+                      Reviews
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link className="nav-link" to="/locations">
+                      Locations
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link className="nav-link" to="/snacks/new">
+                      Add a New Snack
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link className="nav-link" to="/reviews/new">
+                      Add a New Review
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link className="nav-link" to="/locations/new">
+                      Add a New Location
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <LogoutLink />
+                  </li>
+                </>
+              ) : (
+                <>
+                  <li className="nav-item">
+                    <Link className="nav-link active" aria-current="page" to="/">
+                      Home
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link className="nav-link" to="/signup">
+                      Sign Up
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link className="nav-link" to="/login">
+                      Login
+                    </Link>
+                  </li>
+                </>
+              )}
             </ul>
           </div>
         </div>

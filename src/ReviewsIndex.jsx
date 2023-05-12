@@ -1,20 +1,22 @@
 export function ReviewsIndex(props) {
   return (
     <div>
-      <h1>All reviews</h1>
+      <h1>All Reviews</h1>
       <div className="row">
         {props.reviews ? (
           props.reviews.map((review) => (
             <div key={review.id} className="col-sm-12 col-md-6 col-lg-4">
               <div className="card" style={{ width: "18rem" }}>
-                <img className="card-img-top" alt="..." />
+                {/* <img className="card-img-top" alt="..." /> */}
                 <div className="card-body">
-                  <h5 className="card-title">{review.snack_id}</h5>
-                  <h6 className="card-title">{review.user_id}</h6>
+                  {/* <h5 className="card-title">{review.snack_id}</h5>
+                  <h6 className="card-title">{review.user_id}</h6> */}
                   <p className="card-text">
                     {review.note}, {review.snack_rate}
                   </p>
-                  <button onClick={() => props.onShowReview(review)}>More info</button>
+                  <button className="btn btn-dark form-button" onClick={() => props.onShowReview(review)}>
+                    More info
+                  </button>
                 </div>
               </div>
             </div>

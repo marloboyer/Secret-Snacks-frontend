@@ -17,7 +17,9 @@ export function LocationsNew(props) {
         <div>
           Address: <input name="address" type="text" />
         </div>
-        <button type="submit">Create Location</button>
+        <button type="submit" className="btn btn-dark">
+          Create Location
+        </button>
       </form>
     </div>
   );

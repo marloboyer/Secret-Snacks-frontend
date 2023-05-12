@@ -1,3 +1,4 @@
+import "./index.css";
 export function ReviewsShow(props) {
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -14,22 +15,27 @@ export function ReviewsShow(props) {
       <p>User ID: {props.review.user_id}</p>
       <p>Note: {props.review.note}</p>
       <p>Snack Rate: {props.review.snack_rate}</p>
+      <h2>Update Info:</h2>
       <form onSubmit={handleSubmit}>
         <div>
-          Snack ID: <input defaultValue={props.review.snack_id} name="snack_id" type="text" />
+          <input defaultValue={props.review.snack_id} name="snack_id" type="text" />
         </div>
         <div>
-          User ID: <input defaultValue={props.review.user_id} name="user_id" type="text" />
+          <input defaultValue={props.review.user_id} name="user_id" type="text" />
         </div>
         <div>
-          Note: <input defaultValue={props.review.note} name="note" type="text" />
+          <input defaultValue={props.review.note} name="note" type="text" />
         </div>
         <div>
-          Snack Rate: <input defaultValue={props.review.snack_rate} name="snack_rate" type="text" />
+          <input defaultValue={props.review.snack_rate} name="snack_rate" type="text" />
         </div>
-        <button type="submit">Update review</button>
+        <button type="submit" className="btn btn-dark form-button">
+          Update Review
+        </button>
       </form>
-      <button onClick={handleClick}>Destroy review</button>
+      <button className="btn btn-dark form-button" onClick={handleClick}>
+        Destroy review
+      </button>
     </div>
   );
 }
