@@ -6,9 +6,7 @@ export function Header() {
     <header>
       <nav className="navbar navbar-expand-lg bg-body-tertiary" style={{ backgroundColor: "#e3f2fd" }}>
         <div className="container-fluid">
-          <a className="navbar-brand" href="#">
-            Secret Snacks
-          </a>
+          <a className="navbar-brand" href="#"></a>
           <button
             className="navbar-toggler"
             type="button"
@@ -38,21 +36,6 @@ export function Header() {
                   <li className="nav-item">
                     <Link className="nav-link" to="/locations">
                       Locations
-                    </Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link className="nav-link" to="/snacks/new">
-                      Add a New Snack
-                    </Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link className="nav-link" to="/reviews/new">
-                      Add a New Review
-                    </Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link className="nav-link" to="/locations/new">
-                      Add a New Location
                     </Link>
                   </li>
                   <li className="nav-item">

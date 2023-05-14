@@ -1,3 +1,4 @@
+import axios from "axios";
 export function SnacksShow(props) {
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -7,13 +8,22 @@ export function SnacksShow(props) {
   const handleClick = () => {
     props.onDestroySnack(props.snack);
   };
+  const handleText = () => {
+    let params = {
+      phone: "+12144937360",
+      text_body: `Hey, there is a new snack out now! snack:${props.snack.name}, snack:${props.snack.brand}`,
+    };
+    axios.post("http://localhost:3000/twilio.json", params).then((response) => {
+      alert("Text sent!");
+    });
+  };
   return (
     <div>
       <h1>Snack information</h1>
       <p>Name: {props.snack.name}</p>
       <p>Brand: {props.snack.brand}</p>
       <p>User ID: {props.snack.user_id}</p>
-      <p>Image: {props.snack.image}</p>
+      <p>Image: {props.snack.snack_image}</p>
       <h2>Update Snack</h2>
 
       <form onSubmit={handleSubmit}>
@@ -33,6 +43,9 @@ export function SnacksShow(props) {
           Update snack
         </button>
       </form>
+      <button className="btn btn-dark" onClick={handleText}>
+        Send Text
+      </button>
       <button className="btn btn-dark" onClick={handleClick}>
         Destroy snack
       </button>

@@ -1,13 +1,17 @@
+import { Link } from "react-router-dom";
 export function ReviewsIndex(props) {
   return (
     <div>
       <h1>All Reviews</h1>
+      <Link className="nav-link" to="/reviews/new">
+        Add a New Review
+      </Link>
       <div className="row">
         {props.reviews ? (
           props.reviews.map((review) => (
             <div key={review.id} className="col-sm-12 col-md-6 col-lg-4">
               <div className="card" style={{ width: "18rem" }}>
-                {/* <img className="card-img-top" alt="..." /> */}
+                <img src={review.snack.snack_image} className="card-img-top" alt="..." />
                 <div className="card-body">
                   {/* <h5 className="card-title">{review.snack_id}</h5>
                   <h6 className="card-title">{review.user_id}</h6> */}
