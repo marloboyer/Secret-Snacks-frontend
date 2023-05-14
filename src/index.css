@@ -1,10 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Titan+One&display=swap');
 home.h1{
   font-family: 'Titan One', cursive;
-  text-shadow: 2px 4px 4px rgb(180, 180, 180);
-  /* <div class="wrapper">
-    <h1>Adding a shadow to text</h1>
-</div>  */
 }
 
 html {

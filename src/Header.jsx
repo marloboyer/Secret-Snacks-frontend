@@ -44,6 +44,10 @@ export function Header() {
                 </>
               ) : (
                 <>
+                  <div>
+                    <h1>Secret Snacks</h1>
+                  </div>
+
                   <li className="nav-item">
                     <Link className="nav-link active" aria-current="page" to="/">
                       Home

@@ -3,10 +3,12 @@ export function SnacksIndex(props) {
   return (
     <div>
       <h1>All Snacks</h1>
-      <Link className="nav-link" to="/snacks/new">
-        Add a New Snack
-      </Link>
-      <div className="row">
+      <button className="btn btn-dark">
+        <Link className="nav-link" to="/snacks/new">
+          Add a New Snack
+        </Link>{" "}
+      </button>
+      <div className="row gy-3">
         {props.snacks ? (
           props.snacks.map((snack) => (
             <div key={snack.id} className="col-sm-12 col-md-6 col-lg-4">

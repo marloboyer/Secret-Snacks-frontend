@@ -3,9 +3,11 @@ export function LocationsIndex(props) {
   return (
     <div>
       <h1>All Locations</h1>
-      <Link className="nav-link" to="/locations/new">
-        Add a New Location
-      </Link>
+      <button className="btn btn-dark">
+        <Link className="nav-link" to="/locations/new">
+          Add a New Location
+        </Link>{" "}
+      </button>
       <div className="row">
         {props.locations ? (
           props.locations.map((location) => (

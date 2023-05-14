@@ -3,9 +3,11 @@ export function ReviewsIndex(props) {
   return (
     <div>
       <h1>All Reviews</h1>
-      <Link className="nav-link" to="/reviews/new">
-        Add a New Review
-      </Link>
+      <button className="btn btn-dark">
+        <Link className="nav-link" to="/reviews/new">
+          Add a New Review
+        </Link>{" "}
+      </button>
       <div className="row">
         {props.reviews ? (
           props.reviews.map((review) => (
