@@ -5,20 +5,20 @@ export function SnacksNew(props) {
     props.onCreateSnack(params, () => event.target.reset());
   };
   return (
-    <div>
-      <h1>New Snack</h1>
-      <form onSubmit={handleSubmit}>
-        <div>
-          Name: <input name="name" type="text" />
+    <div className="container">
+      <h1>Add a New Snack:</h1>
+      <form className="w-50" onSubmit={handleSubmit}>
+        <div className="form-group">
+          Snack Name: <input className="form-control" name="name" type="text" />
         </div>
-        <div>
-          Brand: <input name="brand" type="text" />
+        <div className="form-group">
+          Brand: <input className="form-control" name="brand" type="text" />
         </div>
-        <div>
-          User ID: <input name="user_id" type="text" />
+        <div className="form-group">
+          User ID: <input className="form-control" name="user_id" type="text" />
         </div>
-        <div>
-          Image: <input name="imgae" type="text" />
+        <div className="form-group">
+          Image URL: <input className="form-control" name="image" type="text" />
         </div>
         <button type="submit" className="btn btn-dark">
           Create Snack

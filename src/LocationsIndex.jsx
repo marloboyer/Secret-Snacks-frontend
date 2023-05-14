@@ -8,7 +8,7 @@ export function LocationsIndex(props) {
           Add a New Location
         </Link>{" "}
       </button>
-      <div className="row">
+      <div className="row gy-3">
         {props.locations ? (
           props.locations.map((location) => (
             <div key={location.id} className="col-sm-12 col-md-6 col-lg-4">

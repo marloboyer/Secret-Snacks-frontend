@@ -8,7 +8,7 @@ export function ReviewsIndex(props) {
           Add a New Review
         </Link>{" "}
       </button>
-      <div className="row">
+      <div className="row gy-3">
         {props.reviews ? (
           props.reviews.map((review) => (
             <div key={review.id} className="col-sm-12 col-md-6 col-lg-4">
@@ -18,6 +18,8 @@ export function ReviewsIndex(props) {
                   {/* <h5 className="card-title">{review.snack_id}</h5>
                   <h6 className="card-title">{review.user_id}</h6> */}
                   <p className="card-text">{review.snack.name}</p>
+                  Review:
+                  <p className="card-text">{review.note}</p>
                   <button className="btn btn-dark form-button" onClick={() => props.onShowReview(review)}>
                     More info
                   </button>

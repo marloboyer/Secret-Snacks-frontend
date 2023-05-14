@@ -5,17 +5,17 @@ export function LocationsNew(props) {
     props.onCreateLocation(params, () => event.target.reset());
   };
   return (
-    <div>
-      <h1>New Location</h1>
-      <form onSubmit={handleSubmit}>
-        <div>
-          Name: <input name="name" type="text" />
+    <div className="container">
+      <h1>Add a New Location:</h1>
+      <form className="w-50" onSubmit={handleSubmit}>
+        <div className="form-group">
+          Name of Location: <input className="form-control" name="name" type="text" />
         </div>
-        <div>
-          Snack ID: <input name="snack_id" type="text" />
+        <div className="form-group">
+          Snack ID: <input className="form-control" name="snack_id" type="text" />
         </div>
-        <div>
-          Address: <input name="address" type="text" />
+        <div className="form-group">
+          Address: <input className="form-control" name="address" type="text" />
         </div>
         <button type="submit" className="btn btn-dark">
           Create Location

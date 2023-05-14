@@ -59,6 +59,7 @@ export function Content() {
     axios.post("http://localhost:3000/snacks.json", params).then((response) => {
       setSnacks([...snacks, response.data]);
       successCallback();
+      window.location.href = "/snacks";
     });
   };
 
@@ -67,6 +68,7 @@ export function Content() {
     axios.post("http://localhost:3000/locations.json", params).then((response) => {
       setLocations([...locations, response.data]);
       successCallback();
+      window.location.href = "/locations";
     });
   };
 
@@ -75,6 +77,7 @@ export function Content() {
     axios.post("http://localhost:3000/reviews.json", params).then((response) => {
       setLocations([...reviews, response.data]);
       successCallback();
+      window.location.href = "/reviews";
     });
   };
 
@@ -179,7 +182,7 @@ export function Content() {
   };
 
   return (
-    <div>
+    <div className="main-body">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<Signup />} />

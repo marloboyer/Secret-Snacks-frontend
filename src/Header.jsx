@@ -44,9 +44,14 @@ export function Header() {
                 </>
               ) : (
                 <>
-                  <div>
+                  {/* <div>
                     <h1>Secret Snacks</h1>
-                  </div>
+                  </div> */}
+                  <nav className="navbar bg-body-tertiary">
+                    <div className="container-fluid">
+                      <span className="navbar-brand mb-0 h1">Secret Snacks</span>
+                    </div>
+                  </nav>
 
                   <li className="nav-item">
                     <Link className="nav-link active" aria-current="page" to="/">

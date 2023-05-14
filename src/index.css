@@ -1,7 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Titan+One&display=swap');
-home.h1{
-  font-family: 'Titan One', cursive;
-}
 
 html {
   scroll-behavior: smooth;
@@ -16,7 +13,20 @@ img {
   margin-top: .25em;
 } */
 
+footer{
+  position:fixed; 
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  background-color: #e3f2fd;
+  padding-left: 20px;
+}
 
+.main-body{
+  margin-bottom: 60px;
+
+}
 
 #root{
   background: url("https://img.freepik.com/premium-vector/potato-chips-seamless-pattern_202271-1106.jpg") ;

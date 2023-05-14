@@ -15,7 +15,7 @@ export function ReviewsShow(props) {
       <p>User ID: {props.review.user_id}</p>
       <p>Note: {props.review.note}</p>
       <p>Snack Rate: {props.review.snack_rate}</p>
-      <h2>Update Info:</h2>
+      <h2>Update Review:</h2>
       <form onSubmit={handleSubmit}>
         <div>
           <input defaultValue={props.review.snack_id} name="snack_id" type="text" />

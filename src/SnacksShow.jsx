@@ -23,8 +23,11 @@ export function SnacksShow(props) {
       <p>Name: {props.snack.name}</p>
       <p>Brand: {props.snack.brand}</p>
       <p>User ID: {props.snack.user_id}</p>
-      <p>Image: {props.snack.snack_image}</p>
-      <h2>Update Snack</h2>
+      <p>Image URL: {props.snack.snack_image}</p>
+      <button className="btn btn-dark" onClick={handleText}>
+        Send a text about this snack!
+      </button>
+      <h2>Update Snack:</h2>
 
       <form onSubmit={handleSubmit}>
         <div>
@@ -43,9 +46,6 @@ export function SnacksShow(props) {
           Update snack
         </button>
       </form>
-      <button className="btn btn-dark" onClick={handleText}>
-        Send Text
-      </button>
       <button className="btn btn-dark" onClick={handleClick}>
         Destroy snack
       </button>

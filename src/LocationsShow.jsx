@@ -9,21 +9,21 @@ export function LocationsShow(props) {
     props.onDestroyLocation(props.location);
   };
   return (
-    <div>
+    <div className="container">
       <h1>Location Information:</h1>
       <p>Name: {props.location.name}</p>
       <p>Snack ID: {props.location.snack_id}</p>
       <p>Address: {props.location.address}</p>
       <h2>Update Location:</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <input defaultValue={props.location.name} name="name" type="text" />
+      <form className="w-50" onSubmit={handleSubmit}>
+        <div className="form-group">
+          <input className="form-control" defaultValue={props.location.name} name="name" type="text" />
         </div>
-        <div>
-          <input defaultValue={props.location.snack_id} name="snack_id" type="text" />
+        <div className="form-group">
+          <input className="form-control" defaultValue={props.location.snack_id} name="snack_id" type="text" />
         </div>
-        <div>
-          <input defaultValue={props.location.address} name="address" type="text" />
+        <div className="form-group">
+          <input className="form-control" defaultValue={props.location.address} name="address" type="text" />
         </div>
         <button type="submit" className="btn btn-dark">
           Update location
