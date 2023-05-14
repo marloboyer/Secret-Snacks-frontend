@@ -17,9 +17,7 @@ export function ReviewsIndex(props) {
                 <div className="card-body">
                   {/* <h5 className="card-title">{review.snack_id}</h5>
                   <h6 className="card-title">{review.user_id}</h6> */}
-                  <p className="card-text">
-                    {review.note}, {review.snack_rate}
-                  </p>
+                  <p className="card-text">{review.snack.name}</p>
                   <button className="btn btn-dark form-button" onClick={() => props.onShowReview(review)}>
                     More info
                   </button>

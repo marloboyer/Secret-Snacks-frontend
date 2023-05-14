@@ -16,9 +16,7 @@ export function LocationsIndex(props) {
                 <img src={location.snack.snack_image} className="card-img-top" alt="..." />
                 <div className="card-body">
                   <h5 className="card-title">{location.name}</h5>
-                  <p className="card-text">
-                    {location.snack_id}, {location.address}
-                  </p>
+                  <p className="card-text">{location.address}</p>
                   <button className="btn btn-dark" onClick={() => props.onShowLocation(location)}>
                     More info
                   </button>
